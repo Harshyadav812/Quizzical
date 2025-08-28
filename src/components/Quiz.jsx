@@ -9,7 +9,6 @@ export default function Quiz({ data, onPlayAgain, onBackToStart }) {
   const [score, setScore] = useState(null)
   const [isQuizOver, setIsQuizOver] = useState(false)
 
-
   const questionsWithOptions = useMemo(() => {
     return data.map(entry => {
       const options = [...entry.incorrect_answers]
@@ -32,7 +31,6 @@ export default function Quiz({ data, onPlayAgain, onBackToStart }) {
       "wrong-guess": userAns[questionIdx] === option && correctAns[questionIdx] !== option
     })
   }
-
 
   const quizQuestions = questionsWithOptions.map((item, idx) => {
 
@@ -64,7 +62,6 @@ export default function Quiz({ data, onPlayAgain, onBackToStart }) {
     )
   })
 
-
   function checkAnswers(formData) {
 
     const userSelectedAnswers = questionsWithOptions.map((_, idx) => {
@@ -75,14 +72,12 @@ export default function Quiz({ data, onPlayAgain, onBackToStart }) {
 
     const score = userSelectedAnswers.filter((ans, idx) => ans === correctAnswers[idx]).length
 
-    console.log(score)
     setUserAns(userSelectedAnswers)
     setCorrectAns(correctAnswers)
     setScore(score)
     setIsQuizOver(true)
 
   }
-
 
   return (
 
