@@ -36,7 +36,6 @@ export default function Quiz({ data, onPlayAgain, onBackToStart }) {
 
   const quizQuestions = questionsWithOptions.map((item, idx) => {
 
-
     return (
       <div key={idx} className="question-ctn">
         <div className="question">{decode(item.question)}</div>
