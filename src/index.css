@@ -1,3 +1,8 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,9 +19,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-
-/* Remove the old gradient and animation */
-/* @keyframes gradientShift { ... } */
 
 /* Add geometric shapes */
 body::before {
@@ -206,6 +208,102 @@ input:disabled + label {
   color: #293264;
 }
 
+/* Shadcn Select Component Styling */
+[data-slot="select-trigger"] {
+  width: 100% !important;
+  max-width: 400px !important;
+  padding: 12px 16px !important;
+  border: 2px solid #4d5b9e !important;
+  border-radius: 8px !important;
+  background: white !important;
+  color: #293264 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  min-height: 44px !important;
+  height: auto !important;
+}
+
+[data-slot="select-trigger"]:hover {
+  border-color: #3d4a7a !important;
+  background-color: #f8f9ff !important;
+}
+
+[data-slot="select-trigger"]:focus {
+  outline: none !important;
+  border-color: #4d5b9e !important;
+  box-shadow: 0 0 0 3px rgba(77, 91, 158, 0.1) !important;
+  background-color: white !important;
+}
+
+[data-slot="select-trigger"][data-disabled] {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  background-color: #f5f7fb !important;
+}
+
+[data-slot="select-trigger"] [data-slot="select-value"] {
+  color: #293264 !important;
+  font-weight: 500 !important;
+}
+
+[data-slot="select-trigger"][data-placeholder] [data-slot="select-value"] {
+  color: #6b7280 !important;
+  font-weight: 400 !important;
+}
+
+[data-slot="select-trigger"] svg {
+  color: #4d5b9e !important;
+  width: 16px !important;
+  height: 16px !important;
+  transition: transform 0.2s ease !important;
+}
+
+[data-slot="select-trigger"][data-state="open"] svg {
+  transform: rotate(180deg) !important;
+}
+
+[data-slot="select-content"] {
+  background: white !important;
+  border: 2px solid #4d5b9e !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  padding: 4px !important;
+  font-family: "Inter", sans-serif !important;
+  z-index: 50 !important;
+  max-height: 240px !important;
+}
+
+[data-slot="select-item"] {
+  padding: 8px 12px !important;
+  border-radius: 4px !important;
+  color: #293264 !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  outline: none !important;
+}
+
+[data-slot="select-item"]:hover,
+[data-slot="select-item"][data-highlighted] {
+  background-color: #f0f8ff !important;
+  color: #293264 !important;
+}
+
+[data-slot="select-item"][data-state="checked"] {
+  background-color: #d6dbf5 !important;
+  color: #293264 !important;
+  font-weight: 600 !important;
+}
+
+[data-slot="select-item"][data-disabled] {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   body::before {
@@ -244,4 +342,48 @@ input:disabled + label {
     flex-direction: column;
     gap: 1rem;
   }
+
+  [data-slot="select-trigger"] {
+    max-width: 320px !important;
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+    min-height: 40px !important;
+  }
+
+  [data-slot="select-trigger"] svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  [data-slot="select-item"] {
+    padding: 6px 10px !important;
+    font-size: 13px !important;
+  }
+
+  .start-page form {
+    max-width: 320px;
+    gap: 0.8rem;
+  }
+
+  .start-page label {
+    font-size: 13px;
+  }
+}
+
+/* Form styling */
+.start-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 1rem;
+}
+
+.start-page label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #293264;
+  margin-bottom: 0.25rem;
+  text-align: left;
 }
