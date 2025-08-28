@@ -127,31 +127,36 @@ function App() {
       </div>
       <form action={handleStartQuiz}>
 
-        <Select name="category" defaultValue={'9'} required>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Select Category" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="9">General Knowledge</SelectItem>
-            <SelectItem value="10">Books</SelectItem>
-            <SelectItem value="11">Film</SelectItem>
-            <SelectItem value="12">Music</SelectItem>
-            <SelectItem value="21">Sports</SelectItem>
-            <SelectItem value="27">Animals</SelectItem>
-            <SelectItem value="29">Comics</SelectItem>
-          </SelectContent>
-        </Select>
+        <label>Choose Category
+          <Select name="category" defaultValue={'9'} required>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Select Category" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="9">General Knowledge</SelectItem>
+              <SelectItem value="10">Books</SelectItem>
+              <SelectItem value="11">Film</SelectItem>
+              <SelectItem value="12">Music</SelectItem>
+              <SelectItem value="21">Sports</SelectItem>
+              <SelectItem value="27">Animals</SelectItem>
+              <SelectItem value="29">Comics</SelectItem>
+            </SelectContent>
+          </Select>
+        </label>
 
-        <Select name="difficulty" defaultValue={'easy'} required>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Select Difficulty" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="easy">Easy</SelectItem>
-            <SelectItem value="medium">Medium</SelectItem>
-            <SelectItem value="hard">Hard</SelectItem>
-          </SelectContent>
-        </Select>
+        <label>Choose Difficulty
+          <Select name="difficulty" defaultValue={'easy'} required>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Select Difficulty" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="easy">Easy</SelectItem>
+              <SelectItem value="medium">Medium</SelectItem>
+              <SelectItem value="hard">Hard</SelectItem>
+            </SelectContent>
+          </Select>
+        </label>
+
         <button
           type='submit'
           className='play-btn'
